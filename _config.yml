@@ -1,3 +1,4 @@
 ---
-exclude: [Gemfile, Gemfile.lock, bin]
+exclude: [bin]
+auto: true
 ---
