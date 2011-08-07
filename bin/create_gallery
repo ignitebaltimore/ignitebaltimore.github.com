@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+require "youtube_it"
+
+client = YouTubeIt::Client.new(:dev_key => ENV['IGNITE_YOUTUBE_KEY'])
+videos = client.videos_by(:user => 'ignitebaltimore',:max_results => 30).videos
+
+#playlist = client.playlist(playlist_id)
+#playlist.videos
+
+File.open("#{File.dirname(__FILE__)}/../_includes/video_gallery.html","w") do |f|
+  videos = videos.sort_by(&:favorite_count).each_slice(5) do |slice|
+    f.puts "<div class='row'><div class='onecol'></div>"
+
+    slice.each_with_index do |video,idx|
+      klass = "tubepress_thumb twocol"
+      klass += " last" if idx == 4
+
+      thumb = video.thumbnails.first
+      url = thumb.url
+      width = thumb.width
+      height = thumb.height
+
+      f.puts "<div class='#{klass}'>"
+      f.puts "<a><img alt='#{video.title}' src='#{url}' width='#{width}' height='#{height}'></a>"
+      f.puts "<a href='#{video.player_url}'>#{video.title}</a>"
+      f.puts "</div>"
+    end
+
+    f.puts "<div class='onecol'></div></div>"
+  end
+end
