@@ -2,14 +2,11 @@
 
 require "youtube_it"
 
-client = YouTubeIt::Client.new(:dev_key => ENV['IGNITE_YOUTUBE_KEY'])
-videos = client.videos_by(:user => 'ignitebaltimore',:max_results => 30).videos
-
-#playlist = client.playlist(playlist_id)
-#playlist.videos
+client = YouTubeIt::Client.new(:username => "ignitebaltimore", :password => ENV['IGNITE_YOUTUBE_PW'], :dev_key => ENV['IGNITE_YOUTUBE_KEY'])
+playlist = client.playlist("3401412D6B7CD892")
 
 File.open("#{File.dirname(__FILE__)}/../_includes/video_gallery.html","w") do |f|
-  videos = videos.sort_by(&:favorite_count).each_slice(5) do |slice|
+  playlist.videos.sort_by(&:favorite_count).reverse.each_slice(5) do |slice|
     f.puts "<div class='row'><div class='onecol'></div>"
 
     slice.each_with_index do |video,idx|

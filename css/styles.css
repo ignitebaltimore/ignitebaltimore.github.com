@@ -3,9 +3,11 @@
 /* ============================== */
 
 	body {
-	  font-family: "Trebuchet MS","Verdana","sans-serif;"
+    font-family: gesta,sans-serif;
+    font-style: normal;
+    font-weight: 300;
 	}
-	
+  
   #header_row {
     position: relative;
   }
