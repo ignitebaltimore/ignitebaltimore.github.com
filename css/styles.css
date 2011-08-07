@@ -3,10 +3,18 @@
 /* ============================== */
 
 	body {
-		
+	  font-family: "Trebuchet MS","Verdana","sans-serif;"
 	}
 	
+  #header_row {
+    position: relative;
+  }
 
+  #header_text {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+  }
 /* ============================= */
 /* ! Layout for mobile version   */
 /* ============================= */

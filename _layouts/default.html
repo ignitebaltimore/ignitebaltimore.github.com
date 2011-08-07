@@ -12,23 +12,43 @@
 
 	<!-- The 1140px Grid - http://cssgrid.net/ -->
 	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
 	
 	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
 	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+  <script type="text/javascript" src="http://use.typekit.com/gpk5ybz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-
-
-<body>
-  <div class="container">
-    {{ content }}
+<body class="tk-league-gothic">
+<div class="container">
+  <div class="row">
+    <div class="eightcol">
+    </div>
+    <div class="fourcol last">
+      <a href="about">About</a>
+      <a href="sponsor">Sponsor</a>
+      <a href="mailing_list">Join Mailing List</a>
+      <a href="contact">Contact</a>
+    </div>
   </div>
+  <div id="header_row" class="row">
+    <div class="threecol">
+      <a href="/"><img src="images/logo.jpg" width="200" height="142" alt="Ignite Baltimore Logo"></a>
+    </div>
+    <div id="header_text" class="ninecol last">
+      <h1>{{ page.title }}</h1>
+      <h2>{{ page.subtitle }}</h2>
+    </div>
+  </div>
+
+  {{ content }}
+
+</div>
+<script>
+  var _gaq=[['_setAccount','UA-9222451-1'],['_trackPageview'],['_trackPageLoadTime']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
 </body>
-
-
- <script>
-    var _gaq=[['_setAccount','UA-9222451-1'],['_trackPageview'],['_trackPageLoadTime']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
 </html>
