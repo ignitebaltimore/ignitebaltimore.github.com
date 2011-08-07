@@ -1,44 +1,32 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE HTML>
+<html>
 <head>
-	<meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>{{ page.title }}</title>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=1024" />
+  <link rel="stylesheet" href="css/978.css" type="text/css">
+	<link rel="stylesheet" href="css/styles.css" type="text/css">
 	
-	<!-- 1140px Grid styles for IE -->
-	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
-
-	<!-- The 1140px Grid - http://cssgrid.net/ -->
-	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/tubepress.css" type="text/css" media="screen" />
-	<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
-	
-	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
-	<script type="text/javascript" src="js/css3-mediaqueries.js"></script>
   <script type="text/javascript" src="http://use.typekit.com/fbk0crn.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-<div class="container">
-  <div class="row">
-    <div class="eightcol">
-    </div>
-    <div class="fourcol last">
-      <a href="about">About</a>
-      <a href="sponsor">Sponsor</a>
-      <a href="mailing_list">Join Mailing List</a>
-      <a href="contact">Contact</a>
-    </div>
-  </div>
+<div class="layout-978">
   <div id="header_row" class="row">
-    <div class="threecol">
+    <div class="col3">
       <a href="/"><img src="images/logo.jpg" width="200" height="142" alt="Ignite Baltimore Logo"></a>
     </div>
-    <div id="header_text" class="ninecol last">
+    <div id="header_text" class="col9">
       <h1>Ignite Baltimore #10 returns in September 2012</h1>
+      <div class="row">
+        <a href="about">ABOUT</a>
+        <a href="http://youtube.com/ignitebaltimore">VIDEOS</a>
+        <a href="http://www.flickr.com/photos/ignitebaltimore/sets/">PHOTOS</a>
+        <a href="mailing_list">MAILING LIST</a>
+        <a href="contact">CONTACT</a>
+      </div>
     </div>
+    <div class="row-end">&nbsp;</div>
   </div>
 
   {{ content }}

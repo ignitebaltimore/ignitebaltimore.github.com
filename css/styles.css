@@ -1,44 +1,43 @@
-/* ============================== */
-/* ! Layout for desktop version   */
-/* ============================== */
-
-	body {
-    font-family: gesta,sans-serif;
-    font-style: normal;
-    font-weight: 300;
-	}
-  
-  #header_row {
-    position: relative;
-  }
-
-  #header_text {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-  }
-/* ============================= */
-/* ! Layout for mobile version   */
-/* ============================= */
-
-@media handheld, only screen and (max-width: 767px) {
-
-	body {
-		
-	}
-
+body {
+  font-family: gesta,sans-serif;
+  font-style: normal;
+  font-weight: 300;
 }
 
+#header_row {
+  position: relative;
+}
 
-/* ========================================== */
-/* ! Provide higher res assets for iPhone 4   */
-/* ========================================== */
+#header_text {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+h1 {
+  margin-bottom: 0;
+}
 
-/*	.logo {
-		background: url(logo2x.jpg) no-repeat;
-		background-size: 212px 303px;
-	}*/
+.video_thumb {
+  float: left;
+  line-height: 1.1em;
+  font-size: 11px;
+  display: inline;
+  overflow: hidden;
+  padding-bottom: 1%;
+}
 
+.video_thumb img {
+  -ms-interpolation-mode: bicubic;
+}
+
+.video_title, .video_title a, .video_title a:hover {
+  /*margin-bottom: auto ! important;*/
+  /*margin-left: 0 ! important;*/
+  /*width: 100%;*/
+  width: 162px;
+  float: left;
+  clear: both;
+  font-size: 12px;
+  font-weight: bold;
 }

@@ -5,25 +5,30 @@ require "youtube_it"
 client = YouTubeIt::Client.new(:username => "ignitebaltimore", :password => ENV['IGNITE_YOUTUBE_PW'], :dev_key => ENV['IGNITE_YOUTUBE_KEY'])
 playlist = client.playlist("3401412D6B7CD892")
 
+videos = playlist.videos.sort_by(&:favorite_count).reverse.first(24)
+
 File.open("#{File.dirname(__FILE__)}/../_includes/video_gallery.html","w") do |f|
-  playlist.videos.sort_by(&:favorite_count).reverse.each_slice(5) do |slice|
-    f.puts "<div class='row'><div class='onecol'></div>"
+  videos.each_slice(4) do |slice|
+    f.puts "<div class='row'>"
 
     slice.each_with_index do |video,idx|
-      klass = "tubepress_thumb twocol"
-      klass += " last" if idx == 4
-
-      thumb = video.thumbnails.first
+      thumb = video.thumbnails.find { |t| t.width == 480 }
       url = thumb.url
       width = thumb.width
       height = thumb.height
 
-      f.puts "<div class='#{klass}'>"
-      f.puts "<a><img alt='#{video.title}' src='#{url}' width='#{width}' height='#{height}'></a>"
-      f.puts "<a href='#{video.player_url}'>#{video.title}</a>"
+      f.puts "<div class='col3 video_thumb'>"
+      f.puts "<a href='#{url}'><img alt='#{video.title}' src='#{url}' width='162' height='121'></a>"
+
+      f.puts <<-META
+      <div class="video_title">
+        <a href="#{url}">#{video.title}</a>
+      </div>
+      META
+      
       f.puts "</div>"
     end
 
-    f.puts "<div class='onecol'></div></div>"
+    f.puts "<div class='row-end'>&nbsp;</div></div>"
   end
 end
