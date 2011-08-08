@@ -58,9 +58,8 @@ h1 {
 #footer {
   color: gray;
   font-size: 0.8em;
-  font-family: italic;
   padding: 10px 0;
   border: solid 1px #B80000;
   border-width: 1px 0 0 0;
-  margin: 1em 0 1em 0;
+  margin: 5em 0 0 0;
 }
