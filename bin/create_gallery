@@ -1,28 +1,21 @@
 #!/usr/bin/env ruby
 
-require "youtube_it"
+require "yaml"
 
-client = YouTubeIt::Client.new(:username => "ignitebaltimore", :password => ENV['IGNITE_YOUTUBE_PW'], :dev_key => ENV['IGNITE_YOUTUBE_KEY'])
-playlist = client.playlist("3401412D6B7CD892")
-
-videos = playlist.videos.sort_by(&:favorite_count).reverse.first(24)
+videos = YAML.load_file("#{File.dirname(__FILE__)}/../data/video_gallery.yaml")
+videos = videos.sort_by { |v| v[:favorite_count] }.reverse.first(24)
 
 File.open("#{File.dirname(__FILE__)}/../_includes/video_gallery.html","w") do |f|
   videos.each_slice(4) do |slice|
     f.puts "<div class='row'>"
 
     slice.each_with_index do |video,idx|
-      thumb = video.thumbnails.find { |t| t.width == 480 }
-      url = thumb.url
-      width = thumb.width
-      height = thumb.height
-
       f.puts "<div class='col3 video_thumb'>"
-      f.puts "<a href='#{url}'><img alt='#{video.title}' src='#{url}' width='162' height='121'></a>"
+      f.puts "<a href='#{video[:url]}'><img alt='#{video[:title]}' src='#{video[:thumb_url]}' width='222' height='166'></a>"
 
       f.puts <<-META
       <div class="video_title">
-        <a href="#{url}">#{video.title}</a>
+        <a href="#{video[:url]}">#{video[:title]}</a>
       </div>
       META
       
