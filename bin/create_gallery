@@ -10,12 +10,15 @@ File.open("#{File.dirname(__FILE__)}/../_includes/video_gallery.html","w") do |f
     f.puts "<div class='row'>"
 
     slice.each_with_index do |video,idx|
+      title = video[:title]
+      title.gsub!(/Ignite Baltimore\s+\d\s*-\s*/,'')
+      title.gsub!(/\s*-\s*Ignite Baltimore\s+\d\s*/,'')
       f.puts "<div class='col3 video_thumb'>"
-      f.puts "<a href='#{video[:url]}'><img alt='#{video[:title]}' src='#{video[:thumb_url]}' width='222' height='166'></a>"
+      f.puts "<a href='#{video[:url]}'><img alt='#{title}' src='#{video[:thumb_url]}' width='222' height='166'></a>"
 
       f.puts <<-META
       <div class="video_title">
-        <a href="#{video[:url]}">#{video[:title]}</a>
+        <a href="#{video[:url]}">#{title}</a>
       </div>
       META
       
