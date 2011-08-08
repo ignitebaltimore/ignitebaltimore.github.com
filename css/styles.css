@@ -6,6 +6,20 @@ body {
 
 #header_row {
   position: relative;
+  margin-bottom: 10px;
+}
+
+#top_links {
+  padding: 10px 0;
+  border: solid 1px #C0C0C0;
+  border-width: 1px 0px;
+  margin: 1em 0 1em 0;
+}
+
+#top_links a, #top_links a:visited {
+  color: black;
+  text-decoration: none;
+  padding-right: 1em;
 }
 
 #header_text {
