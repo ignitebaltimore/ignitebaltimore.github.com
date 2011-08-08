@@ -1,4 +1,4 @@
 ---
-exclude: [bin]
+exclude: [bin,data]
 auto: true
 ---

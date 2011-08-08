@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require "youtube_it"
+require "yaml"
+
+client = YouTubeIt::Client.new(:username => "ignitebaltimore", :password => ENV['IGNITE_YOUTUBE_PW'], :dev_key => ENV['IGNITE_YOUTUBE_KEY'])
+playlist = client.playlist("3401412D6B7CD892")
+
+videos = playlist.videos.map do |video|
+  thumb = video.thumbnails.find { |t| t.width == 480 }
+
+  { title: video.title,
+    url: video.player_url,
+    favorite_count: video.favorite_count,
+    thumb_url: thumb.url,
+    width: thumb.width,
+    height: thumb.height }
+end
+
+File.open("#{File.dirname(__FILE__)}/../data/video_gallery.yaml","w") do |f|
+  f.puts YAML.dump(videos)
+end
