@@ -1,2 +1,1 @@
 exclude: [bin,data]
-auto: true
