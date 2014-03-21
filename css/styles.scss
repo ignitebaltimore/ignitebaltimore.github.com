@@ -9,112 +9,133 @@ body {
   font-weight: 300;
   margin: 0 auto;
   padding: 20px;
-}
-
-#header_row {
-  position: relative;
-  margin-bottom: 10px;
-  #header_text {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    #top_links {
-      padding: 10px 0;
-      border: solid 1px #555555;
-      border-width: 1px 0px;
-      margin: 1em 0 1em 0;
-      a,
-      a:visited {
-        color: #585858;
-        text-decoration: none;
-        padding-right: 1em;
-        font-size: 0.8em;
-        font-weight: bold;
+  #header_row {
+    position: relative;
+    margin-bottom: 10px;
+    #ignite-logo {
+      display: block;
+      position: relative;
+      width: 222px;
+      img {
+        width: 100%;
+        height: auto;
       }
     }
-  }
-  @media (max-width: $breakpoint2) {
-    width: 100%;
     #header_text {
-      position: relative;
-    }
-  }
-}
-
-
-h1 {
-  margin-bottom: 0;
-}
-
-#video_gallery {
-  .video_thumb {
-    display: inline-block;
-    box-sizing: border-box;
-    float: left;
-    width: 25%;
-    text-decoration: none;
-    padding: 0 18px 0 0;
-    &:nth-child(4n-2) {
-      padding: 0 12px 0 6px;
-    }
-    &:nth-child(4n-1) {
-      padding: 0 6px 0 12px;
-    }
-    &:nth-child(4n) {
-      padding: 0 0 0 18px;
-    }
-    img {
-      -ms-interpolation-mode: bicubic;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      box-sizing: border-box;
       width: 100%;
-      height: auto;
-    }
-    p {
-      height: 50px;
-      color: #585858;
-      font-size: 12px;
-      font-weight: bold;
-      text-align: center;
-      margin: 0;
-      padding: 6px 0;
+      padding: 0 0 0 260px;
+      h1 {
+        margin-bottom: 0;
+      }
+      #top_links {
+        padding: 10px 0;
+        border: solid 1px #555555;
+        border-width: 1px 0px;
+        margin: 1em 0 1em 0;
+        a,
+        a:visited {
+          display: inline-block;
+          color: #585858;
+          text-decoration: none;
+          font-size: 0.8em;
+          font-weight: bold;
+          padding: 5px 10px;
+        }
+      }
     }
     @media (max-width: $breakpoint2) {
-      width: 50%;
-      padding: 0 12px 0 0;
-      &:nth-child(4n-2) {
-        padding: 0 0 0 12px;
-      }
-      &:nth-child(4n-1) {
-        padding: 0 12px 0 0;
-      }
-      &:nth-child(4n) {
-        padding: 0 0 0 12px;
-      }
-    }
-    @media (max-width: $breakpoint5) {
       width: 100%;
-      padding: 0;
-      &:nth-child(4n-2),
-      &:nth-child(4n-1),
-      &:nth-child(4n) {
+      text-align: center;
+      #ignite-logo {
+        width: 300px;
+        margin: 0 auto;
+      }
+      #header_text {
+        position: relative;
         padding: 0;
       }
     }
   }
-}
-
-#footer {
-  color: gray;
-  font-size: 0.8em;
-  padding: 10px 0;
-  border: solid 1px #555555;
-  border-width: 1px 0 0 0;
-  margin: 5em 0 0 0;
-}
-
-ul {
-  padding: 0 0 0 10px;
-  li {
-    padding: 5px 0;
-    line-height: 135%;
+  ul {
+    padding: 0 0 0 10px;
+    li {
+      padding: 5px 0;
+      line-height: 135%;
+    }
+  }
+  #video_gallery {
+    .video_thumb {
+      display: inline-block;
+      box-sizing: border-box;
+      float: left;
+      width: 25%;
+      text-decoration: none;
+      padding: 0 18px 0 0;
+      &:nth-child(4n-2) {
+        padding: 0 12px 0 6px;
+      }
+      &:nth-child(4n-1) {
+        padding: 0 6px 0 12px;
+      }
+      &:nth-child(4n) {
+        padding: 0 0 0 18px;
+      }
+      img {
+        -ms-interpolation-mode: bicubic;
+        width: 100%;
+        height: auto;
+      }
+      p {
+        height: 50px;
+        color: #585858;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        margin: 0;
+        padding: 6px 0;
+      }
+      @media (max-width: $breakpoint2) {
+        width: 50%;
+        padding: 0 12px 0 0;
+        &:nth-child(4n-2) {
+          padding: 0 0 0 12px;
+        }
+        &:nth-child(4n-1) {
+          padding: 0 12px 0 0;
+        }
+        &:nth-child(4n) {
+          padding: 0 0 0 12px;
+        }
+      }
+      @media (max-width: $breakpoint5) {
+        width: 100%;
+        padding: 0;
+        &:nth-child(4n-2),
+        &:nth-child(4n-1),
+        &:nth-child(4n) {
+          padding: 0;
+        }
+      }
+    }
+  }
+  .large-video {
+    position: relative;
+    width: 650px;
+    max-width: 100%;
+    iframe {
+      width: 100%;
+    }
+  }
+  #footer {
+    color: gray;
+    font-size: 0.8em;
+    padding: 10px 0;
+    border: solid 1px #555555;
+    border-width: 1px 0 0 0;
+    margin: 5em 0 0 0;
   }
 }
