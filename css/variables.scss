@@ -1,0 +1,24 @@
+$breakpoint1: 1200px;
+$breakpoint2: 960px;
+$breakpoint3: 768px;
+$breakpoint4: 600px;
+$breakpoint5: 480px;
+
+@mixin responsive-width {
+  width: $breakpoint1;
+  @media (max-width: $breakpoint1) {
+    width: $breakpoint2;
+  }
+  @media (max-width: $breakpoint2) {
+    width: $breakpoint3;
+  }
+  @media (max-width: $breakpoint3) {
+    width: $breakpoint4;
+  }
+  @media (max-width: $breakpoint4) {
+    width: $breakpoint5;
+  }
+  @media (max-width: $breakpoint5) {
+    width: 100%;
+  }
+}
