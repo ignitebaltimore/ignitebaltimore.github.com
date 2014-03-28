@@ -44,7 +44,7 @@ body {
       body #header_row #header_text h1 {
         margin-bottom: 0; }
       body #header_row #header_text #top_links ul {
-        padding: 10px 0;
+        padding: 0;
         border: solid 1px #555555;
         border-width: 1px 0px;
         margin: 1em 0 1em 0; }
