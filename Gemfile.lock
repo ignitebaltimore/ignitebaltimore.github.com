@@ -21,7 +21,7 @@ GEM
     liquid (2.6.1)
     maruku (0.7.1)
     multipart-post (2.0.0)
-    oauth (0.4.7)
+    oauth (0.5.6)
     posix-spawn (0.3.8)
     simple_oauth (0.2.0)
     youtube_it (2.0.0)
